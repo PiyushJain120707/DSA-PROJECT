@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>DSA Algorithm Visualizer</h1>
+    <p>Learn Algorithms Through Animation</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Algorithm Controls</h2>
+
+      <div class="controls">
+        <select id="algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="linear">Linear Search</option>
+          <option value="binary">Binary Search</option>
+          <option value="bfs">BFS</option>
+          <option value="dfs">DFS</option>
+        </select>
+
+        <button id="generate">New Array</button>
+        <button id="start" class="green">▶ Start</button>
+        <button id="pause" class="secondary">Ⅱ Pause</button>
+        <button id="reset" class="secondary">↻ Reset</button>
+      </div>
+
+      <div class="controls extra">
+        <label>Speed:
+          <input type="range" id="speed" min="100" max="1000"
+                 value="500" step="100">
+        </label>
+
+        <label>Search Value:
+          <input type="number" id="target" value="25">
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="visualTitle">Bubble Sort Visualization</h2>
+
+      <div id="visual"></div>
+      <div id="graph"></div>
+
+      <div class="legend">
+        <span><i class="dot blue"></i>Unsorted</span>
+        <span><i class="dot orange"></i>Comparing</span>
+        <span><i class="dot green"></i>Sorted / Visited</span>
+        <span><i class="dot purple"></i>Found</span>
+      </div>
+
+      <p id="message">Select an algorithm and press Start.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Algorithm Information</h2>
+      <div class="info">
+        <div>
+          <strong>Time Complexity</strong>
+          <span id="time">O(n²)</span>
+        </div>
+        <div>
+          <strong>Space Complexity</strong>
+          <span id="space">O(1)</span>
+        </div>
+        <div>
+          <strong>Steps</strong>
+          <span id="steps">0</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    DSA Algorithm Visualizer | HTML • CSS • JavaScript
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
